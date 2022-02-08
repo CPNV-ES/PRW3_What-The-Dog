@@ -48,3 +48,4 @@ export function Form<S extends z.ZodType<any, any>>({
 }
 
 Form.Input = FormInput;
+Form.TextArea = FormTextArea;
