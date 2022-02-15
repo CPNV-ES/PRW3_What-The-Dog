@@ -4,6 +4,7 @@ import type { AppContext, AppInitialProps, AppLayoutProps } from "next/app";
 import Head from "next/head";
 
 import "../styles/globals.css";
+import { Header } from "../ui/Header";
 
 const App: NextComponentType<AppContext, AppInitialProps, AppLayoutProps> = ({
   Component,
@@ -22,6 +23,7 @@ const App: NextComponentType<AppContext, AppInitialProps, AppLayoutProps> = ({
         />
         <title>What the dog</title>
       </Head>
+      <Header />
       {getLayout(<Component {...pageProps}></Component>)}
     </>
   );
