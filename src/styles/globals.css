@@ -18,3 +18,18 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@layer components {
+  .switch-thumb {
+    transform: translateX(2px);
+    transition: transform 0.1s ease-in-out;
+  }
+
+  .switch-primary[data-state="checked"] {
+    @apply bg-green-600;
+  }
+
+  .switch-thumb[data-state="checked"] {
+    transform: translateX(14px);
+  }
+}
