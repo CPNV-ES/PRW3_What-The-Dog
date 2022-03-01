@@ -5,6 +5,7 @@ import { z } from "zod";
 
 import { FormInput } from "./FormInput";
 import { FormTextArea } from "./FormTextArea";
+import { FormSwitch } from "./FormSwitch";
 
 export interface FormProps<S extends z.ZodType<any, any>>
   extends Omit<
@@ -49,3 +50,4 @@ export function Form<S extends z.ZodType<any, any>>({
 
 Form.Input = FormInput;
 Form.TextArea = FormTextArea;
+Form.Switch = FormSwitch;
