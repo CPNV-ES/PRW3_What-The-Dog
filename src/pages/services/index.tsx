@@ -16,7 +16,7 @@ const Services: NextPage<ServicesProps> = (props: ServicesProps) => {
   const { services } = props;
   return (
     <div className="mx-auto max-w-3xl mt-8">
-      <div className="mx-4 p-2 sm:p-4 border-2 border-[#041f29] rounded-lg">
+      <div className="mx-4 p-2 sm:p-4 border-2 border-[#041f29] dark:border-none dark:bg-[#17333D] rounded-lg">
         <div className="flex flex-col sm:grid sm:grid-cols-4 gap-4">
           {services.map((service: ServiceProps, index) => {
             return (
@@ -24,8 +24,10 @@ const Services: NextPage<ServicesProps> = (props: ServicesProps) => {
                 <a
                   className={`relative col-span-2 flex pt-32 justify-start items-end p-4 pb-6 rounded-xl`}
                 >
-                  <span className="text-white drop-shadow">{service.name}</span>
-                  <div className="absolute z-[-10] inset-0">
+                  <span className="text-white drop-shadow z-10">
+                    {service.name}
+                  </span>
+                  <div className="absolute inset-0">
                     <Image
                       alt={`Illustration pour le service ${service.name}`}
                       src={service.image_url}
