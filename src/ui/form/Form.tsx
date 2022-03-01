@@ -3,9 +3,11 @@ import { FormProvider, useForm, UseFormProps } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
-import { FormInput } from "./FormInput";
+import { FormTextField } from "./FormTextField";
 import { FormTextArea } from "./FormTextArea";
 import { FormSwitch } from "./FormSwitch";
+import { FormSelect } from "./FormSelect";
+import { FormDatePicker } from "./FormDatePicker";
 
 export interface FormProps<S extends z.ZodType<any, any>>
   extends Omit<
@@ -48,6 +50,8 @@ export function Form<S extends z.ZodType<any, any>>({
   );
 }
 
-Form.Input = FormInput;
+Form.TextField = FormTextField;
+Form.Select = FormSelect;
+Form.DatePicker = FormDatePicker;
 Form.TextArea = FormTextArea;
 Form.Switch = FormSwitch;
