@@ -23,7 +23,6 @@ export const FormTextField = ({
         <TextField
           required={required}
           placeholder={placeholder}
-          defaultValue={defaultValue}
           label={label}
           {...field}
         />
