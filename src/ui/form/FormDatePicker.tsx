@@ -9,7 +9,7 @@ interface InputProps
   name: string;
 }
 
-export const FormDatePicker = ({ name, label }: InputProps) => {
+export const FormDatePicker = ({ name, label, disabled }: InputProps) => {
   const { control } = useFormContext();
 
   return (
@@ -21,6 +21,7 @@ export const FormDatePicker = ({ name, label }: InputProps) => {
           <DatePicker
             label={label}
             renderInput={(params) => <TextField {...params} />}
+            disabled={disabled}
             {...field}
           />
         </LocalizationProvider>
