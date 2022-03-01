@@ -15,9 +15,8 @@ export const LoginForm = () => {
 
   return (
     <Form schema={LoginSchema} onSubmit={handleSubmit}>
-      <Label>email</Label>
-      <Form.Input name="email" type="email" placeholder="email" />
-      <Form.Input name="password" type="password" placeholder="········" />
+      <Form.TextField name="email" type="email" label="email" />
+      <Form.TextField name="password" type="password" label="········" />
       <button type="submit">login</button>
     </Form>
   );
