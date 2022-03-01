@@ -7,6 +7,7 @@ import { FormTextField } from "./FormTextField";
 import { FormTextArea } from "./FormTextArea";
 import { FormSwitch } from "./FormSwitch";
 import { FormSelect } from "./FormSelect";
+import { FormDatePicker } from "./FormDatePicker";
 
 export interface FormProps<S extends z.ZodType<any, any>>
   extends Omit<
@@ -51,5 +52,6 @@ export function Form<S extends z.ZodType<any, any>>({
 
 Form.TextField = FormTextField;
 Form.Select = FormSelect;
+Form.DatePicker = FormDatePicker;
 Form.TextArea = FormTextArea;
 Form.Switch = FormSwitch;
