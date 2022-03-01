@@ -1,0 +1,86 @@
+import type { NextPage } from "next";
+import Image from "next/image";
+import Link from "next/link";
+
+type ServicesProps = {
+  services: [ServiceProps];
+};
+
+type ServiceProps = {
+  name: string;
+  link: string;
+  image_url: string;
+};
+
+const Services: NextPage<ServicesProps> = (props: ServicesProps) => {
+  const { services } = props;
+  return (
+    <div className="mx-auto max-w-3xl mt-8">
+      <div className="mx-4 p-2 sm:p-4 border-2 border-[#041f29] rounded-lg">
+        <div className="flex flex-col sm:grid sm:grid-cols-4 gap-4">
+          {services.map((service: ServiceProps, index) => {
+            return (
+              <Link key={index} href={service.link}>
+                <a
+                  className={`relative col-span-2 flex pt-32 justify-start items-end p-4 pb-6 rounded-xl`}
+                >
+                  <span className="text-white drop-shadow">{service.name}</span>
+                  <div className="absolute z-[-10] inset-0">
+                    <Image
+                      alt={`Illustration pour le service ${service.name}`}
+                      src={service.image_url}
+                      objectFit="cover"
+                      layout="fill"
+                      className="rounded-xl"
+                    />
+                  </div>
+                </a>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export async function getStaticProps() {
+  return {
+    props: {
+      services: [
+        {
+          name: "Coaching en comportement",
+          link: "https://random.dog/",
+          image_url:
+            "https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
+        },
+        {
+          name: "Coaching en comportement",
+          link: "https://random.dog/",
+          image_url:
+            "https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
+        },
+        {
+          name: "Coaching en comportement",
+          link: "https://random.dog/",
+          image_url:
+            "https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
+        },
+        {
+          name: "Coaching en comportement",
+          link: "https://random.dog/",
+          image_url:
+            "https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
+        },
+        {
+          name: "Coaching en comportement",
+          link: "https://random.dog/",
+          image_url:
+            "https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
+        },
+      ],
+    }, // will be passed to the page component as props
+  };
+}
+
+export default Services;
