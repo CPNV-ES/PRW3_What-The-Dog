@@ -3,7 +3,7 @@ import { FormProvider, useForm, UseFormProps } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
-import { FormInput } from "./FormInput";
+import { FormTextField } from "./FormTextField";
 import { FormTextArea } from "./FormTextArea";
 import { FormSwitch } from "./FormSwitch";
 
@@ -48,6 +48,6 @@ export function Form<S extends z.ZodType<any, any>>({
   );
 }
 
-Form.Input = FormInput;
+Form.TextField = FormTextField;
 Form.TextArea = FormTextArea;
 Form.Switch = FormSwitch;
