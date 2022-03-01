@@ -1,13 +1,16 @@
-import * as SwitchPrimitive from "@radix-ui/react-switch";
+import Switch, { SwitchProps } from "@mui/material/Switch";
 import { Controller, useFormContext } from "react-hook-form";
 
-type FormSwitchProps = {
+interface FormSwitchProps extends SwitchProps {
   name: string;
   defaultChecked?: boolean;
-};
+}
 
 export const FormSwitch = ({
   name,
+  required,
+  placeholder,
+  disabled,
   defaultChecked = false,
 }: FormSwitchProps) => {
   const { control } = useFormContext();
@@ -19,14 +22,13 @@ export const FormSwitch = ({
       defaultValue={defaultChecked}
       render={({ field }) => {
         return (
-          <SwitchPrimitive.Root
+          <Switch
+            required={required}
+            placeholder={placeholder}
+            defaultChecked={defaultChecked}
+            disabled={disabled}
             {...field}
-            defaultChecked={field.value}
-            onCheckedChange={field.onChange}
-            className="relative w-8 h-5 bg-gray-300 rounded-full switch-primary"
-          >
-            <SwitchPrimitive.Thumb className="block w-4 h-4 bg-white rounded-full shadow-md switch-thumb" />
-          </SwitchPrimitive.Root>
+          />
         );
       }}
     ></Controller>
