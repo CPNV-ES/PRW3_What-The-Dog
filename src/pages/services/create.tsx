@@ -1,5 +1,5 @@
-import type { NextPage } from 'next'
-import styles from '../../styles/Home.module.css'
+import type { NextLayoutPage } from 'next'
+import { MenuItem } from "@mui/material";
 import { z } from "zod";
 import { Form } from '../../ui/form/Form'
 
@@ -14,7 +14,7 @@ export const ServiceSchema = z.object({
   dogs: z.string(),
 });
 
-const Service: NextPage = () => {
+const Service: NextLayoutPage = () => {
 
   function handleSubmit(data: z.infer<typeof ServiceSchema>) {
    console.log(data);
@@ -22,27 +22,41 @@ const Service: NextPage = () => {
 
 
   return (
-    <Form schema={ServiceSchema} onSubmit={handleSubmit}>
-      <label>Date</label>
-      <Form.Input className="border border-black" name="date" type="date" placeholder="" valueAsDate />
-      <label>Durée</label>
-      <Form.Input className="border border-black" name="time" type="text" placeholder="" />
-      <label>Type</label>
-      <Form.Input className="border border-black" name="type" type="text" placeholder="" />
-      <label>Description</label>
-      <Form.Input className="border border-black" name="description" type="text" placeholder="" />
-      <label>Rue</label>
-      <Form.Input className="border border-black" name="street" type="text" placeholder="" />
-      <label>NPA</label>
-      <Form.Input className="border border-black" name="npa" type="text" placeholder="" />
-      <label>VD</label>
-      <Form.Input className="border border-black" name="canton" type="text" placeholder="" />
-      <label>Dogs</label>
-      <Form.Input className="border border-black" name="dogs" type="text" placeholder="" />
+    <Form className="bg-cyan-700 text-white px-5 py-8 h-full" schema={ServiceSchema} onSubmit={handleSubmit}>
+      <h1 className='mb-5'>Création d'un service</h1>
+      <div className=''>
+        <Form.DatePicker name="date" label="Date" />
+        <Form.Select name="time" label="Durée" defaultValue={"1"}>
+          <MenuItem value="1">15 min</MenuItem>
+          <MenuItem value="2">30 min</MenuItem>
+          <MenuItem value="3">45 min</MenuItem>
+        </Form.Select>
+        <Form.Select name="type" label="Type" defaultValue={"a"}>
+          <MenuItem value="a">type a</MenuItem>
+          <MenuItem value="b">type b</MenuItem>
+          <MenuItem value="c">type c</MenuItem>
+        </Form.Select>
+        <Form.TextField name="description" label="Description" defaultValue={""} />
+        <Form.TextField name="street" label="Rue" defaultValue={""} />
+        <Form.TextField name="npa" label="NPA" defaultValue={""} />
+        <Form.Select name="canton" label="Canton" defaultValue={"VD"}>
+          <MenuItem value="VD">VD</MenuItem>
+          <MenuItem value="NE">NE</MenuItem>
+          <MenuItem value="ZH">ZH</MenuItem>
+        </Form.Select>
+        <Form.Select name="dogs" label="Dogs" defaultValue={"a"}>
+          <MenuItem value="a">chien a</MenuItem>
+          <MenuItem value="b">chien b</MenuItem>
+          <MenuItem value="c">chien c</MenuItem>
+        </Form.Select>
+      </div>
       
-      <button className="border border-black" type="submit">Créer le service</button>
+
+      <button className="border border-white mt-5 w-full" type="submit">Ajouter</button>
     </Form>
   )
 }
+
+Service.getLayout = (page) => <div className="bg-cyan-800 p-10">{page}</div> 
 
 export default Service
