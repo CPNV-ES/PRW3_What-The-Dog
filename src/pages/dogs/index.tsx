@@ -1,17 +1,16 @@
 import type { NextPage } from "next";
-import { DogCard } from  '../../ui/DogCard';
-import { Dog, Gender } from '../../types/dog';
-import { Client } from '../../types/client';
 import { Container, Fab } from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
+import { DogCard } from "../../modules/dog/DogCard";
+import { Dog } from "../../modules/dog/dog";
 
-const paul = new Client("Paul", "Dupont", Gender.Male, "pdupont@cpnv.ch", "+4177123000");
+const paul = { firstname: "Paul", lastname: "Dupont", female: false, email: "pdupont@cpnv.ch", phone: "+4177123000" };
 
-const Dogs = [
-  new Dog("1", "Rufus", Gender.Male, new Date("2020-01-01"), "Berger allemand", paul),
-  new Dog("2", "Duke", Gender.Male, new Date("2018-01-01"), "Berger allemand", paul),
-  new Dog("3", "Boss", Gender.Male, new Date("2021-12-01"), "Berger allemand", paul),
-  new Dog("4", "Peppermint", Gender.Female, new Date("2021-12-01"), "Berger allemand", paul),
+const Dogs: Dog[] = [
+  { id: "1", noun: "Rufus", female: false, birthdate: new Date("2020-01-01"), breed: "Berger allemand", master: paul, sterilized: false, chemical: false, color: "", dead: false },
+  { id: "2", noun: "Duke", female: false, birthdate: new Date("2020-05-01"), breed: "Berger allemand", master: paul, sterilized: false, chemical: false, color: "", dead: false },
+  { id: "3", noun: "Boss", female: false, birthdate: new Date("2019-01-01"), breed: "Berger allemand", master: paul, sterilized: false, chemical: false, color: "", dead: false },
+  { id: "4", noun: "Peppermint", female: true, birthdate: new Date("2021-01-01"), breed: "Berger allemand", master: paul, sterilized: false, chemical: false, color: "", dead: false },
 ];
 
 const DogsIndex = () => {

@@ -1,11 +1,11 @@
-import { Dog, Gender } from '../types/dog';
+import Dog from './dog';
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { getAgeMonths } from '../lib/getAge';
+import { getAgeMonths } from '../../lib/getAge';
 import { Grid } from '@mui/material';
-import { Link } from '../ui/core/Link';
+import { Link } from '../../ui/core/Link';
 import { CardActionArea } from '@mui/material';
 import MaleRoundedIcon from '@mui/icons-material/MaleRounded';
 import FemaleRoundedIcon from '@mui/icons-material/FemaleRounded';
@@ -19,7 +19,7 @@ type DogProp = {
 }
 
 export const DogCard = ({ dog } : DogProp) => {
-  var ageMonths: number = getAgeMonths(dog.birthday);
+  var ageMonths: number = getAgeMonths(dog.birthdate);
   var ageString = ageMonths >= 12 ? `${Math.floor(ageMonths / 12)} ans` : `${ageMonths} mois`;
   const [anchorEl, setAnchorEl] = React.useState(null); 
   const open = Boolean(anchorEl);
@@ -30,8 +30,8 @@ export const DogCard = ({ dog } : DogProp) => {
     setAnchorEl(null);
   };
   const cardActions = [
-    { label: "Edit", action: (id) => { alert("Edit" + id) } },
-    { label: "Delete", action: (id) => { alert("Delete" + id) } }
+    { label: "Edit", action: (id: string) => { alert("Edit" + id) } },
+    { label: "Delete", action: (id: string) => { alert("Delete" + id) } }
   ]
 
   return (
@@ -41,8 +41,8 @@ export const DogCard = ({ dog } : DogProp) => {
           <Grid item xs={3}>
             <Link href="/dogs/123">
               <span style={{ fontWeight: 'bold', fontSize: '1.66em' }}> 
-                { dog.name } 
-                { dog.gender == Gender.Male ? <MaleRoundedIcon style={{color: '#7BD7FF'}}/> : <FemaleRoundedIcon style={{color:'#FF7BAB'}}/> }
+                { dog.noun } 
+                { !dog.female ? <MaleRoundedIcon style={{color: '#7BD7FF'}}/> : <FemaleRoundedIcon style={{color:'#FF7BAB'}}/> }
               </span> 
             </Link>
           </Grid>
@@ -92,9 +92,9 @@ export const DogCard = ({ dog } : DogProp) => {
           <Grid item xs={3}>
             <Link href={'/clients/123'}> 
               <span style={{ fontWeight: '600' }}>
-                { dog.master.lastName }
+                { dog.master.lastname }
                 { ' ' } 
-                { dog.master.firstName }
+                { dog.master.firstname }
               </span>
             </Link>
           </Grid>
