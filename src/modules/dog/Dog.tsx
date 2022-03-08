@@ -1,7 +1,7 @@
-import { Gender } from "./gender";
-import { Sterilization } from "./sterilization";
+import { Gender } from "./Gender";
+import { Sterilization } from "./Sterilization";
 
-export type Dog {
+export type Dog = {
     Id: string;
     Name: string;
     Gender: Gender;
