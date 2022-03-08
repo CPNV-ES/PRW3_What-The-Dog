@@ -8,9 +8,10 @@ import AddIcon from '@mui/icons-material/Add';
 const paul = new Client("Paul", "Dupont", Gender.Male, "pdupont@cpnv.ch", "+4177123000");
 
 const Dogs = [
-  new Dog("Rufus", Gender.Male, new Date("2020-01-01"), "Berger allemand", paul),
-  new Dog("Duke", Gender.Male, new Date("2018-01-01"), "Berger allemand", paul),
-  new Dog("Boss", Gender.Male, new Date("2021-12-01"), "Berger allemand", paul),
+  new Dog("1", "Rufus", Gender.Male, new Date("2020-01-01"), "Berger allemand", paul),
+  new Dog("2", "Duke", Gender.Male, new Date("2018-01-01"), "Berger allemand", paul),
+  new Dog("3", "Boss", Gender.Male, new Date("2021-12-01"), "Berger allemand", paul),
+  new Dog("4", "Peppermint", Gender.Female, new Date("2021-12-01"), "Berger allemand", paul),
 ];
 
 const DogsIndex = () => {

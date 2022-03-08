@@ -29,6 +29,10 @@ export const DogCard = ({ dog } : DogProp) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const cardActions = [
+    { label: "Edit", action: (id) => { alert("Edit" + id) } },
+    { label: "Delete", action: (id) => { alert("Delete" + id) } }
+  ]
 
   return (
     <Card sx={{maxWidth: 768, mx: "auto", marginY: 1}}>
@@ -76,9 +80,9 @@ export const DogCard = ({ dog } : DogProp) => {
                   },
                 }}
               >
-                {['test', 'test2'].map((option) => (
-                  <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
-                    {option}
+                {cardActions.map(({label, action}) => (
+                  <MenuItem key={label} onClick={() => { action(dog.id); handleClose(); } }>
+                    {label}
                   </MenuItem>
                 ))}
             </Menu>
