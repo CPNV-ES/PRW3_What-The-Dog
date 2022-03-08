@@ -17,8 +17,8 @@ const Dogs: Dog[] = [
 
 const DogsIndex = () => {
   return <Container maxWidth="lg">
-    { Dogs.map(dog => <DogCard key={dog.Id} dog={dog}></DogCard>) }
-    <Fab aria-label="add" style={{position:"fixed", right: 50, bottom: 50}}>
+    { Dogs.map(dog => <DogCard key={dog.id} dog={dog}></DogCard>) }
+    <Fab aria-label="add" className="fixed right-12 bottom-12">
       <AddIcon />
     </Fab>
   </Container>

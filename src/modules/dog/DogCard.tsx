@@ -41,14 +41,14 @@ export const DogCard = ({ dog } : DogProp) => {
         <Grid container spacing={2}>
           <Grid item xs={3}>
             <Link href={"/dogs/" + dog.Id}>
-              <span style={{ fontWeight: 'bold', fontSize: '1.66em' }}> 
+              <span className="text-xl font-bold"> 
                 { dog.name} 
-                { dog.gender == Gender.Male ? <MaleRoundedIcon style={{color: '#7BD7FF'}}/> : <FemaleRoundedIcon style={{color:'#FF7BAB'}}/> }
+                { dog.gender == Gender.Male ? <MaleRoundedIcon  className="text-[#7BD7FF]"/> : <FemaleRoundedIcon  className="text-[#FF7BAB]"/> }
               </span> 
             </Link>
           </Grid>
-          <Grid item xs={8} style={{display: 'flex', alignItems: 'center'}}>
-            <span style={{fontSize: '1.25em'}}>
+          <Grid item xs={8} className="flex items-center">
+            <span className="text-xl">
               { ageString }
               { ' • ' }
               { dog.breedName }
@@ -62,7 +62,7 @@ export const DogCard = ({ dog } : DogProp) => {
               aria-expanded={open ? 'true' : undefined}
               aria-haspopup="true"
               onClick={handleClick}
-              style={{position: 'relative', right: -10, top: 30}} // wow mucho clean, mucho css
+              className="relative right-[-10px] top-[25px]"
             >
               <MoreVertIcon />
             </IconButton>
@@ -89,10 +89,10 @@ export const DogCard = ({ dog } : DogProp) => {
             </Menu>
           </Grid>
         </Grid>
-        <Grid container spacing={2} style={{fontSize: '0.9em'}}>
+        <Grid container spacing={2} className="text-sm">
           <Grid item xs={3}>
             <Link href={'/clients/123'}> 
-              <span style={{ fontWeight: '600' }}>
+              <span className="font-semibold">
                 { dog.master.lastname }
                 { ' ' } 
                 { dog.master.firstname }
