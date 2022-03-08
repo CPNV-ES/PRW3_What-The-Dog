@@ -19,8 +19,7 @@ const clients = [
 
 const DogsIndex = () => {
   return <Container maxWidth="lg">
-    {2+2}
-    { clients.map(client => <ClientCard key={client.id} client={client}></ClientCard>) }
+    { clients.map(client => <ClientCard key={client.id} client={client}></ClientCard>) }  
 
     <Fab aria-label="add" style={{position:"fixed", right: 50, bottom: 50}}>
       <AddIcon />
