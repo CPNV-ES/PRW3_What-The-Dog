@@ -1,5 +1,4 @@
-import { Gender } from './dog';
 
-export class Client {
-  constructor(public firstName: string, public lastName: string, public gender: Gender, public email: String, public phone: string) {}
+export type Client = {
+  id: Number, firstname: String, lastname: String, gender: String, email: String, phone: String;
 }
