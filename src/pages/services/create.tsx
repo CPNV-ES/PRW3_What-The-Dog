@@ -21,8 +21,8 @@ const Service: NextLayoutPage = () => {
 
 
   return (
-    <Form className="bg-cyan-700 text-white px-5 py-8 h-full" schema={ServiceSchema} onSubmit={handleSubmit}>
-      <h1 className="mb-5">Création d&aposun service</h1>
+    <Form className="h-full px-5 py-8 text-white bg-cyan-700" schema={ServiceSchema} onSubmit={handleSubmit}>
+      <h1 className="mb-5">{"Création d'un service"}</h1>
       <div className="grid grid-cols-12 space-y-3">
         <Form.DatePicker name="date" label="Date" className="col-span-12" />
         <Form.Select name="time" label="Durée" defaultValue={"1"} className="col-span-6 mr-3">
