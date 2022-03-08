@@ -47,11 +47,11 @@ const Service: NextLayoutPage = () => {
       </div>
 
 
-      <button className="border border-white mt-5 w-full" type="submit">Ajouter</button>
+      <button className="w-full mt-5 border border-white" type="submit">Ajouter</button>
     </Form>
   )
 }
 
-Service.getLayout = (page) => <div className="bg-cyan-800 p-10">{page}</div>
+Service.getLayout = (page) => <div className="p-10 bg-cyan-800">{page}</div>
 
 export default Service

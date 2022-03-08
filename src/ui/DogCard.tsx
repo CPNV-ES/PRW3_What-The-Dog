@@ -2,9 +2,9 @@ import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { getAgeMonths } from '../../lib/getAge';
+import { getAgeMonths } from '../lib/getAge';
 import { Grid } from '@mui/material';
-import { Link } from '../../ui/core/Link';
+import { Link } from '../ui/core/Link';
 import { CardActionArea } from '@mui/material';
 import MaleRoundedIcon from '@mui/icons-material/MaleRounded';
 import FemaleRoundedIcon from '@mui/icons-material/FemaleRounded';
@@ -12,8 +12,7 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { Dog } from './Dog';
-import { Gender } from './Gender';
+import { Dog } from '../modules/dog/Dog';
 
 type DogProp = {
   dog: Dog

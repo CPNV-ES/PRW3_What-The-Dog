@@ -1,12 +1,13 @@
 import type { NextPage } from "next";
+import { Client } from '../../types/client';
 import { Container, Fab } from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
-import { DogCard } from "../../modules/dog/DogCard";
 import { Dog } from "../../modules/dog/Dog";
+import { DogCard } from "../../modules/dog/DogCard";
 import { Gender } from "../../modules/dog/Gender";
 import { Sterilization } from "../../modules/dog/Sterilization";
 
-const paul = { firstname: "Paul", lastname: "Dupont", female: false, email: "pdupont@cpnv.ch", phone: "+4177123000" };
+const paul = { id: "1", firstname: "Paul", lastname: "Dupoont", gender: "Male", email: "pdupont@cpnv.ch", phone: "+4177123000" };
 
 const Dogs: Dog[] = [
   { id: "1", name: "Rufus", gender: Gender.Male, birthdate: new Date("2020-01-01"), breedName: "Berger allemand", master: paul, sterilization: Sterilization.NotSterilized, color: "", isDead: false },
