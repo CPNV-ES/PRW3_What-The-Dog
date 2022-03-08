@@ -1,6 +1,6 @@
 import { Controller, useFormContext } from "react-hook-form";
 import Select, { SelectProps } from "@mui/material/Select";
-import { InputLabel } from "@mui/material";
+import { FormControl, InputLabel } from "@mui/material";
 
 interface InputProps extends SelectProps {
   name: string;
@@ -13,6 +13,7 @@ export const FormSelect = ({
   defaultValue,
   label,
   children,
+  className,
 }: InputProps) => {
   const { control } = useFormContext();
 
@@ -22,7 +23,7 @@ export const FormSelect = ({
       control={control}
       defaultValue={defaultValue}
       render={({ field }) => (
-        <>
+        <FormControl className={className}>
           <InputLabel id={name}>{label}</InputLabel>
           <Select
             required={required}
@@ -30,11 +31,12 @@ export const FormSelect = ({
             defaultValue={defaultValue}
             label={label}
             labelId={name}
+            id={name}
             {...field}
           >
             {children}
           </Select>
-        </>
+        </FormControl>
       )}
     />
   );
