@@ -12,6 +12,7 @@ export const FormTextField = ({
   placeholder,
   defaultValue,
   label,
+  className
 }: InputProps) => {
   const { control } = useFormContext();
   const { error } = useFormError(name);
@@ -29,6 +30,7 @@ export const FormTextField = ({
           error={!!error}
           helperText={error}
           label={label}
+          className={className}
           {...field}
         />
       )}
