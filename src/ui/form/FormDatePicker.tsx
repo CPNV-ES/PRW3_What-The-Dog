@@ -9,7 +9,7 @@ interface InputProps
   name: string;
 }
 
-export const FormDatePicker = ({ name, label }: InputProps) => {
+export const FormDatePicker = ({ name, label, className }: InputProps) => {
   const { control } = useFormContext();
 
   return (
@@ -20,7 +20,7 @@ export const FormDatePicker = ({ name, label }: InputProps) => {
         <LocalizationProvider dateAdapter={AdapterDateFns}>
           <DatePicker
             label={label}
-            renderInput={(params) => <TextField {...params} />}
+            renderInput={(params) => <TextField className={className} {...params} />}
             {...field}
           />
         </LocalizationProvider>

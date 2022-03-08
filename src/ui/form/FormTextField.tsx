@@ -11,6 +11,7 @@ export const FormTextField = ({
   placeholder,
   defaultValue,
   label,
+  className
 }: InputProps) => {
   const { control } = useFormContext();
 
@@ -24,6 +25,7 @@ export const FormTextField = ({
           required={required}
           placeholder={placeholder}
           label={label}
+          className={className}
           {...field}
         />
       )}
