@@ -1,17 +1,16 @@
-import { Client } from "../client/client";
+import { Gender } from "./gender";
+import { Sterilization } from "./sterilization";
 
 export type Dog {
-    id: string;
-    noun: string;
-    female: boolean;
-    birthdate: Date;
-    sterilized: boolean;
-    chemical: boolean;
-    color: string;
-    dead: boolean;
-    master: any;
-    breed: string;
-    //client: Client;
-    //breed: Breed;
-    //crossbreed: Breed;
+    Id: string;
+    Name: string;
+    Gender: Gender;
+    Birthdate: Date;
+    Sterilization: Sterilization;
+    Color: string;
+    IsDead: boolean;
+    Master: any; // Client
+    BreedName: string;
+    //Breed: Breed;
+    //Crossbreed: Breed;
 }

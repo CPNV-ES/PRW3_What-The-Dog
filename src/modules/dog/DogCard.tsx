@@ -13,13 +13,14 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { Gender } from './gender';
 
 type DogProp = {
   dog: Dog
 }
 
 export const DogCard = ({ dog } : DogProp) => {
-  var ageMonths: number = getAgeMonths(dog.birthdate);
+  var ageMonths: number = getAgeMonths(dog.Birthdate);
   var ageString = ageMonths >= 12 ? `${Math.floor(ageMonths / 12)} ans` : `${ageMonths} mois`;
   const [anchorEl, setAnchorEl] = React.useState(null); 
   const open = Boolean(anchorEl);
@@ -39,10 +40,10 @@ export const DogCard = ({ dog } : DogProp) => {
       <CardContent sx={{paddingX: 2}}>
         <Grid container spacing={2}>
           <Grid item xs={3}>
-            <Link href="/dogs/123">
+            <Link href={"/dogs/" + dog.Id}>
               <span style={{ fontWeight: 'bold', fontSize: '1.66em' }}> 
-                { dog.noun } 
-                { !dog.female ? <MaleRoundedIcon style={{color: '#7BD7FF'}}/> : <FemaleRoundedIcon style={{color:'#FF7BAB'}}/> }
+                { dog.Name} 
+                { dog.Gender == Gender.Male ? <MaleRoundedIcon style={{color: '#7BD7FF'}}/> : <FemaleRoundedIcon style={{color:'#FF7BAB'}}/> }
               </span> 
             </Link>
           </Grid>
@@ -50,7 +51,7 @@ export const DogCard = ({ dog } : DogProp) => {
             <span style={{fontSize: '1.25em'}}>
               { ageString }
               { ' • ' }
-              { dog.breed }
+              { dog.BreedName }
             </span>
           </Grid>
           <Grid>
@@ -92,19 +93,19 @@ export const DogCard = ({ dog } : DogProp) => {
           <Grid item xs={3}>
             <Link href={'/clients/123'}> 
               <span style={{ fontWeight: '600' }}>
-                { dog.master.lastname }
+                { dog.Master.lastname }
                 { ' ' } 
-                { dog.master.firstname }
+                { dog.Master.firstname }
               </span>
             </Link>
           </Grid>
           <Grid item xs={9}>
-            <Link href={'tel:' + dog.master.phone}>
-              { dog.master.phone }
+            <Link href={'tel:' + dog.Master.phone}>
+              { dog.Master.phone }
             </Link>
             { ' • ' }
-            <Link href={'mailto:' + dog.master.email}>
-              { dog.master.email }
+            <Link href={'mailto:' + dog.Master.email}>
+              { dog.Master.email }
             </Link>
           </Grid>
         </Grid>

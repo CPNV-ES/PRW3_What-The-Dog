@@ -3,14 +3,16 @@ import { Container, Fab } from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
 import { DogCard } from "../../modules/dog/DogCard";
 import { Dog } from "../../modules/dog/dog";
+import { Gender } from "../../modules/dog/gender";
+import { Sterilization } from "../../modules/dog/sterilization";
 
 const paul = { firstname: "Paul", lastname: "Dupont", female: false, email: "pdupont@cpnv.ch", phone: "+4177123000" };
 
 const Dogs: Dog[] = [
-  { id: "1", noun: "Rufus", female: false, birthdate: new Date("2020-01-01"), breed: "Berger allemand", master: paul, sterilized: false, chemical: false, color: "", dead: false },
-  { id: "2", noun: "Duke", female: false, birthdate: new Date("2020-05-01"), breed: "Berger allemand", master: paul, sterilized: false, chemical: false, color: "", dead: false },
-  { id: "3", noun: "Boss", female: false, birthdate: new Date("2019-01-01"), breed: "Berger allemand", master: paul, sterilized: false, chemical: false, color: "", dead: false },
-  { id: "4", noun: "Peppermint", female: true, birthdate: new Date("2021-01-01"), breed: "Berger allemand", master: paul, sterilized: false, chemical: false, color: "", dead: false },
+  { Id: "1", Name: "Rufus", Gender: Gender.Male, Birthdate: new Date("2020-01-01"), BreedName: "Berger allemand", Master: paul, Sterilization: Sterilization.NotSterilized, Color: "", IsDead: false },
+  { Id: "2", Name: "Duke", Gender: Gender.Male, Birthdate: new Date("2020-05-01"), BreedName: "Berger allemand", Master: paul, Sterilization: Sterilization.NotSterilized, Color: "", IsDead: false },
+  { Id: "3", Name: "Boss", Gender: Gender.Male, Birthdate: new Date("2019-01-01"), BreedName: "Berger allemand", Master: paul, Sterilization: Sterilization.NotSterilized, Color: "", IsDead: false },
+  { Id: "4", Name: "Peppermint", Gender: Gender.Female, Birthdate: new Date("2021-01-01"), BreedName: "Berger allemand", Master: paul, Sterilization: Sterilization.NotSterilized, Color: "", IsDead: false },
 ];
 
 const DogsIndex = () => {
