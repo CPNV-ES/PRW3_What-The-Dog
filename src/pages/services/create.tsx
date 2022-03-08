@@ -17,7 +17,6 @@ export const ServiceSchema = z.object({
 const Service: NextLayoutPage = () => {
 
   function handleSubmit(data: z.infer<typeof ServiceSchema>) {
-   console.log(data);
   }
 
 
