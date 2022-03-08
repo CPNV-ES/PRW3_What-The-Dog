@@ -3,6 +3,7 @@ import { FormProvider, useForm, UseFormProps } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
+import { errorMap } from "./errorMap";
 import { FormTextField } from "./FormTextField";
 import { FormSwitch } from "./FormSwitch";
 import { FormSelect } from "./FormSelect";
@@ -29,7 +30,7 @@ export function Form<S extends z.ZodType<any, any>>({
   const ctx = useForm<z.infer<S>>({
     mode: "onBlur",
     defaultValues,
-    resolver: schema ? zodResolver(schema) : undefined,
+    resolver: schema ? zodResolver(schema, { errorMap }) : undefined,
   });
 
   const { handleSubmit } = ctx;
