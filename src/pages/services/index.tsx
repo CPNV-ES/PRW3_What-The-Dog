@@ -15,7 +15,7 @@ type ServiceProps = {
 const Services: NextPage<ServicesProps> = (props: ServicesProps) => {
   const { services } = props;
   return (
-    <div className="mx-auto max-w-3xl mt-8">
+    <div className="mx-auto max-w-3xl">
       <div className="mx-4 p-2 sm:p-4 border-2 border-[#041f29] dark:border-none dark:bg-[#17333D] rounded-lg">
         <div className="flex flex-col sm:grid sm:grid-cols-4 gap-4">
           {services.map((service: ServiceProps, index) => {
