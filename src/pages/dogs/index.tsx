@@ -2,9 +2,9 @@ import type { NextPage } from "next";
 import { Container, Fab } from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
 import { DogCard } from "../../modules/dog/DogCard";
-import { Dog } from "../../modules/dog/dog";
-import { Gender } from "../../modules/dog/gender";
-import { Sterilization } from "../../modules/dog/sterilization";
+import { Dog } from "../../modules/dog/Dog";
+import { Gender } from "../../modules/dog/Gender";
+import { Sterilization } from "../../modules/dog/Sterilization";
 
 const paul = { firstname: "Paul", lastname: "Dupont", female: false, email: "pdupont@cpnv.ch", phone: "+4177123000" };
 
@@ -19,7 +19,7 @@ const DogsIndex = () => {
   return <Container maxWidth="lg">
     { Dogs.map(dog => <DogCard dog={dog}></DogCard>) }
 
-    <Fab aria-label="add" style={{position:"absolute", right: 50, bottom: 50}}>
+    <Fab aria-label="add" style={{position:"fixed", right: 50, bottom: 50}}>
       <AddIcon />
     </Fab>
   </Container>
