@@ -47,6 +47,12 @@ const ClientsIndex = () => {
           <Grid item xs={12}>
             {Dogs.map(dog => <DogCard dog={dog}></DogCard>)}
           </Grid>
+          <Grid item xs={12}>
+            Consultations
+          </Grid>
+          <Grid item xs={12}>
+            {/*appointments.map(appoint => <AppointmentCard appoint={appoint}></AppointmentCard>)*/}
+          </Grid>
         </Grid>
       </CardContent>
     </Card>
