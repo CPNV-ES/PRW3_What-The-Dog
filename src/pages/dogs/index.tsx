@@ -9,10 +9,10 @@ import { Sterilization } from "../../modules/dog/Sterilization";
 const paul = { firstname: "Paul", lastname: "Dupont", female: false, email: "pdupont@cpnv.ch", phone: "+4177123000" };
 
 const Dogs: Dog[] = [
-  { Id: "1", Name: "Rufus", Gender: Gender.Male, Birthdate: new Date("2020-01-01"), BreedName: "Berger allemand", Master: paul, Sterilization: Sterilization.NotSterilized, Color: "", IsDead: false },
-  { Id: "2", Name: "Duke", Gender: Gender.Male, Birthdate: new Date("2020-05-01"), BreedName: "Berger allemand", Master: paul, Sterilization: Sterilization.NotSterilized, Color: "", IsDead: false },
-  { Id: "3", Name: "Boss", Gender: Gender.Male, Birthdate: new Date("2019-01-01"), BreedName: "Berger allemand", Master: paul, Sterilization: Sterilization.NotSterilized, Color: "", IsDead: false },
-  { Id: "4", Name: "Peppermint", Gender: Gender.Female, Birthdate: new Date("2021-01-01"), BreedName: "Berger allemand", Master: paul, Sterilization: Sterilization.NotSterilized, Color: "", IsDead: false },
+  { id: "1", name: "Rufus", gender: Gender.Male, birthdate: new Date("2020-01-01"), breedName: "Berger allemand", master: paul, sterilization: Sterilization.NotSterilized, color: "", isDead: false },
+  { id: "2", name: "Duke", gender: Gender.Male, birthdate: new Date("2020-05-01"), breedName: "Berger allemand", master: paul, sterilization: Sterilization.NotSterilized, color: "", isDead: false },
+  { id: "3", name: "Boss", gender: Gender.Male, birthdate: new Date("2019-01-01"), breedName: "Berger allemand", master: paul, sterilization: Sterilization.NotSterilized, color: "", isDead: false },
+  { id: "4", name: "Peppermint", gender: Gender.Female, birthdate: new Date("2021-01-01"), breedName: "Berger allemand", master: paul, sterilization: Sterilization.NotSterilized, color: "", isDead: false },
 ];
 
 const DogsIndex = () => {

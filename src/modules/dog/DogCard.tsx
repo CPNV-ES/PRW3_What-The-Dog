@@ -20,7 +20,7 @@ type DogProp = {
 }
 
 export const DogCard = ({ dog } : DogProp) => {
-  var ageMonths: number = getAgeMonths(dog.Birthdate);
+  var ageMonths: number = getAgeMonths(dog.birthdate);
   var ageString = ageMonths >= 12 ? `${Math.floor(ageMonths / 12)} ans` : `${ageMonths} mois`;
   const [anchorEl, setAnchorEl] = React.useState(null); 
   const open = Boolean(anchorEl);
@@ -42,8 +42,8 @@ export const DogCard = ({ dog } : DogProp) => {
           <Grid item xs={3}>
             <Link href={"/dogs/" + dog.Id}>
               <span style={{ fontWeight: 'bold', fontSize: '1.66em' }}> 
-                { dog.Name} 
-                { dog.Gender == Gender.Male ? <MaleRoundedIcon style={{color: '#7BD7FF'}}/> : <FemaleRoundedIcon style={{color:'#FF7BAB'}}/> }
+                { dog.name} 
+                { dog.gender == Gender.Male ? <MaleRoundedIcon style={{color: '#7BD7FF'}}/> : <FemaleRoundedIcon style={{color:'#FF7BAB'}}/> }
               </span> 
             </Link>
           </Grid>
@@ -51,7 +51,7 @@ export const DogCard = ({ dog } : DogProp) => {
             <span style={{fontSize: '1.25em'}}>
               { ageString }
               { ' • ' }
-              { dog.BreedName }
+              { dog.breedName }
             </span>
           </Grid>
           <Grid>
@@ -93,19 +93,19 @@ export const DogCard = ({ dog } : DogProp) => {
           <Grid item xs={3}>
             <Link href={'/clients/123'}> 
               <span style={{ fontWeight: '600' }}>
-                { dog.Master.lastname }
+                { dog.master.lastname }
                 { ' ' } 
-                { dog.Master.firstname }
+                { dog.master.firstname }
               </span>
             </Link>
           </Grid>
           <Grid item xs={9}>
-            <Link href={'tel:' + dog.Master.phone}>
-              { dog.Master.phone }
+            <Link href={'tel:' + dog.master.phone}>
+              { dog.master.phone }
             </Link>
             { ' • ' }
-            <Link href={'mailto:' + dog.Master.email}>
-              { dog.Master.email }
+            <Link href={'mailto:' + dog.master.email}>
+              { dog.master.email }
             </Link>
           </Grid>
         </Grid>

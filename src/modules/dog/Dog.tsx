@@ -2,15 +2,15 @@ import { Gender } from "./Gender";
 import { Sterilization } from "./Sterilization";
 
 export type Dog = {
-    Id: string;
-    Name: string;
-    Gender: Gender;
-    Birthdate: Date;
-    Sterilization: Sterilization;
-    Color: string;
-    IsDead: boolean;
-    Master: any; // Client
-    BreedName: string;
-    //Breed: Breed;
-    //Crossbreed: Breed;
+    id: string;
+    name: string;
+    gender: Gender;
+    birthdate: Date;
+    sterilization: Sterilization;
+    color: string;
+    isDead: boolean;
+    master: any; // Client
+    breedName: string;
+    //breed: Breed;
+    //crossbreed: Breed;
 }
