@@ -1,4 +1,4 @@
-import Dog from './dog';
+import Dog from './Dog';
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -13,7 +13,7 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { Gender } from './gender';
+import { Gender } from './Gender';
 
 type DogProp = {
   dog: Dog
@@ -82,7 +82,7 @@ export const DogCard = ({ dog } : DogProp) => {
                 }}
               >
                 {cardActions.map(({label, action}) => (
-                  <MenuItem key={label} onClick={() => { action(dog.id); handleClose(); } }>
+                  <MenuItem key={label} onClick={() => { action(dog.Id); handleClose(); } }>
                     {label}
                   </MenuItem>
                 ))}
