@@ -1,24 +1,24 @@
 import type { NextPage } from "next";
+import { DogCard } from  '../../ui/DogCard';
+import { Dog, Gender } from '../../types/dog';
+import { Client } from '../../types/client';
 import { Container, Fab } from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
-import { DogCard } from "../../modules/dog/DogCard";
-import { Dog } from "../../modules/dog/Dog";
-import { Gender } from "../../modules/dog/Gender";
-import { Sterilization } from "../../modules/dog/Sterilization";
 
-const paul = { firstname: "Paul", lastname: "Dupont", female: false, email: "pdupont@cpnv.ch", phone: "+4177123000" };
+const paul = new Client("Paul", "Dupont", Gender.Male, "pdupont@cpnv.ch", "+4177123000");
 
-const Dogs: Dog[] = [
-  { Id: "1", Name: "Rufus", Gender: Gender.Male, Birthdate: new Date("2020-01-01"), BreedName: "Berger allemand", Master: paul, Sterilization: Sterilization.NotSterilized, Color: "", IsDead: false },
-  { Id: "2", Name: "Duke", Gender: Gender.Male, Birthdate: new Date("2020-05-01"), BreedName: "Berger allemand", Master: paul, Sterilization: Sterilization.NotSterilized, Color: "", IsDead: false },
-  { Id: "3", Name: "Boss", Gender: Gender.Male, Birthdate: new Date("2019-01-01"), BreedName: "Berger allemand", Master: paul, Sterilization: Sterilization.NotSterilized, Color: "", IsDead: false },
-  { Id: "4", Name: "Peppermint", Gender: Gender.Female, Birthdate: new Date("2021-01-01"), BreedName: "Berger allemand", Master: paul, Sterilization: Sterilization.NotSterilized, Color: "", IsDead: false },
+const Dogs = [
+  new Dog("1", "Rufus", Gender.Male, new Date("2020-01-01"), "Berger allemand", paul),
+  new Dog("2", "Duke", Gender.Male, new Date("2018-01-01"), "Berger allemand", paul),
+  new Dog("3", "Boss", Gender.Male, new Date("2021-12-01"), "Berger allemand", paul),
+  new Dog("4", "Peppermint", Gender.Female, new Date("2021-12-01"), "Berger allemand", paul),
 ];
 
 const DogsIndex = () => {
   return <Container maxWidth="lg">
-    { Dogs.map(dog => <DogCard key={dog.Id} dog={dog}></DogCard>) }
-    <Fab aria-label="add" style={{position:"fixed", right: 50, bottom: 50}}>
+    { Dogs.map(dog => <DogCard dog={dog}></DogCard>) }
+
+    <Fab aria-label="add" style={{position:"absolute", right: 50, bottom: 50}}>
       <AddIcon />
     </Fab>
   </Container>
