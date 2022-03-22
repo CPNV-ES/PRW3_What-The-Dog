@@ -64,19 +64,19 @@ const ClientView = () => {
             <Grid item xs={12}>
               Informations de contact
             </Grid>
-            <Grid item xs={3}>
+            <Grid item xs={3} style={{ paddingLeft: 35 }}>
               E-mail
             </Grid>
             <Grid item xs={9}>
               {client.email}
             </Grid>
-            <Grid item xs={3}>
+            <Grid item xs={3} style={{ paddingLeft: 35 }}>
               Mobile
             </Grid>
             <Grid item xs={9}>
               {client.phone}
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} style={{ fontSize: 20, fontWeight: "bold" }}>
               Chiens
             </Grid>
             <Grid item xs={12}>
@@ -84,11 +84,14 @@ const ClientView = () => {
                 <DogCard key={dog.id} dog={dog}></DogCard>
               ))}
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} style={{ fontSize: 20, fontWeight: "bold" }}>
               Consultations
             </Grid>
             <Grid item xs={12}>
               {/* Add consultations when model is created */}
+              {Dogs.map((dog) => (
+                <DogCard key={dog.id} dog={dog}></DogCard>
+              ))}
             </Grid>
           </Grid>
         </CardContent>
