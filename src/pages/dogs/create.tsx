@@ -26,9 +26,10 @@ const DogsCreate = () => {
           <MenuItem value="M">Mâle</MenuItem>
         </Form.Select>
         
-        <Form.DatePicker name="birthdate" label="Anniversaire" className="col-span-12" />
         
-        <Form.Select name="sterilization" label="Stérilisation" defaultValue={"no"} className="col-span-12">
+        <Form.DatePicker name="birthdate" label="Anniversaire" className="col-span-8" />
+        
+        <Form.Select name="sterilization" label="Stérilisation" defaultValue={"no"} className="col-span-4">
           <MenuItem value="no">Non-stérilisé</MenuItem>
           <MenuItem value="chem">Chimique</MenuItem>
           <MenuItem value="other">Autre</MenuItem>
@@ -38,7 +39,7 @@ const DogsCreate = () => {
           name="race"
           disablePortal
           id="combo-box-demo"
-          className="col-span-12"
+          className="col-span-6"
           options={
             [
               { label: 'Afghan Hound', value: '1' },
@@ -49,11 +50,13 @@ const DogsCreate = () => {
           renderInput={(params) => <TextField {...params} label="Race" />}
         />
         
+        <Form.TextField name="color" label="Couleur" defaultValue={""} className="col-span-6 mt-[12px] mr-3" />
+        
         <Form.Autocomplete
           name="owner"
           disablePortal
           id="combo-box-demo"
-          className="col-span-12"
+          className="col-span-6"
           options={
             [
               { label: 'Loïc Viret', value: '1' },
