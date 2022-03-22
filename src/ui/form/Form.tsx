@@ -8,6 +8,7 @@ import { FormTextField } from "./FormTextField";
 import { FormSwitch } from "./FormSwitch";
 import { FormSelect } from "./FormSelect";
 import { FormDatePicker } from "./FormDatePicker";
+import { FormAutocomplete } from "./FormAutocomplete";
 
 export interface FormProps<S extends z.ZodType<any, any>>
   extends Omit<
@@ -54,3 +55,4 @@ Form.TextField = FormTextField;
 Form.Select = FormSelect;
 Form.DatePicker = FormDatePicker;
 Form.Switch = FormSwitch;
+Form.Autocomplete = FormAutocomplete;

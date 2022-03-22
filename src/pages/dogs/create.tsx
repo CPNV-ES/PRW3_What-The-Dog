@@ -1,7 +1,8 @@
-import { Container, MenuItem } from "@mui/material";
+import { Autocomplete, Container, MenuItem, TextField } from "@mui/material";
 import { Form } from "../../ui/form/Form";
 import { z } from "zod";
 import Button from '@mui/material/Button';
+import React from "react";
 
 export const ServiceSchema = z.object({
   bithdate: z.date(),
@@ -33,17 +34,34 @@ const DogsCreate = () => {
           <MenuItem value="other">Autre</MenuItem>
         </Form.Select>
         
-       {/* Maybe use Autocomplete */}
-        <Form.Select name="race" label="Race" defaultValue={"1"} className="col-span-12">
-          <MenuItem value="1">Affenpinscher</MenuItem>
-          <MenuItem value="2">Airedale Terrier</MenuItem>
-        </Form.Select>
-
-       {/* Maybe use Autocomplete */}
-        <Form.Select name="owner" label="Maître" defaultValue={"2"} className="col-span-12">
-          <MenuItem value="1">Loïc Viret</MenuItem>
-          <MenuItem value="2">Paul Dupont</MenuItem>
-        </Form.Select>
+        <Form.Autocomplete
+          name="race"
+          disablePortal
+          id="combo-box-demo"
+          className="col-span-12"
+          options={
+            [
+              { label: 'Afghan Hound', value: '1' },
+              { label: 'Airedale Terrier', value: '2' },
+              { label: 'Alaskan Malamute', value: '' }
+            ]
+          }
+          renderInput={(params) => <TextField {...params} label="Race" />}
+        />
+        
+        <Form.Autocomplete
+          name="owner"
+          disablePortal
+          id="combo-box-demo"
+          className="col-span-12"
+          options={
+            [
+              { label: 'Loïc Viret', value: '1' },
+              { label: 'Paul Dupont', value: '2' },
+            ]
+          }
+          renderInput={(params) => <TextField {...params} label="Maître" />}
+        />
       </div>
 
       <Button variant="contained" color="primary" className="w-full p-5 mt-16 bg-blue-700" type="submit">Ajouter</Button>
