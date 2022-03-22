@@ -23,11 +23,11 @@ const Services: NextPage<ServicesProps> = (props: ServicesProps) => {
             return (
               <Link key={index} href={service.link}>
                 <a
-                  className={`group relative col-span-${
-                    service.full_size ? 4 : 2
+                  className={`group relative ${
+                    service.full_size ? "col-span-4" : "col-span-2"
                   } flex pt-32 justify-start items-end p-4 pb-6 rounded-xl hover:scale-[.95] border-2 border-transparent hover:border-2 hover:border-white transform transition`}
                 >
-                  <span className="text-white drop-shadow z-10 group-hover:">
+                  <span className="text-white drop-shadow z-10 ">
                     {service.name}
                   </span>
                   <div className="absolute inset-0">
