@@ -58,7 +58,7 @@ const ClientView = () => {
       <Card sx={{ maxWidth: 768, mx: "auto", marginY: 1 }}>
         <CardContent sx={{ paddingX: 2 }}>
           <Grid container spacing={2}>
-            <Grid item xs={12} style={{ display: 'flex' }}>
+            <Grid item xs={12} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 30 }}>
               {client.firstname} {client.lastname}
             </Grid>
             <Grid item xs={12}>
@@ -86,6 +86,9 @@ const ClientView = () => {
             </Grid>
             <Grid item xs={12}>
               Consultations
+            </Grid>
+            <Grid item xs={12}>
+              {/* Add consultations when model is created */}
             </Grid>
           </Grid>
         </CardContent>
