@@ -2,9 +2,11 @@ import { ReactNode } from "react";
 import { NextComponentType } from "next";
 import type { AppContext, AppInitialProps, AppLayoutProps } from "next/app";
 import Head from "next/head";
+import { ThemeProvider } from "@mui/material";
 
 import "../styles/globals.css";
 import { Header } from "../ui/Header";
+import { muiTheme } from "../lib/mui-theme";
 
 const App: NextComponentType<AppContext, AppInitialProps, AppLayoutProps> = ({
   Component,
@@ -24,7 +26,9 @@ const App: NextComponentType<AppContext, AppInitialProps, AppLayoutProps> = ({
         <title>What the dog</title>
       </Head>
       <Header />
-      {getLayout(<Component {...pageProps}></Component>)}
+      <ThemeProvider theme={muiTheme}>
+        {getLayout(<Component {...pageProps}></Component>)}
+      </ThemeProvider>
     </>
   );
 };
