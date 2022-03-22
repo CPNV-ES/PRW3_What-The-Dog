@@ -15,7 +15,7 @@ const DogsCreate = () => {
   
   return <Container maxWidth="lg">
     <Form className="h-full px-5 py-8 text-xl" schema={ServiceSchema} onSubmit={handleSubmit}>
-      <h1 className="mb-5">{"Création d'un service"}</h1>
+      <h1 className="mb-5">{"Nouveau chien"}</h1>
       <div className="grid grid-cols-12 space-y-3">
 
         <Form.TextField name="name" label="Nom" defaultValue={""} className="col-span-8 mt-[12px] mr-3" />
@@ -31,6 +31,18 @@ const DogsCreate = () => {
           <MenuItem value="no">Non-stérilisé</MenuItem>
           <MenuItem value="chem">Chimique</MenuItem>
           <MenuItem value="other">Autre</MenuItem>
+        </Form.Select>
+        
+       {/* Maybe use Autocomplete */}
+        <Form.Select name="race" label="Race" defaultValue={"1"} className="col-span-12">
+          <MenuItem value="1">Affenpinscher</MenuItem>
+          <MenuItem value="2">Airedale Terrier</MenuItem>
+        </Form.Select>
+
+       {/* Maybe use Autocomplete */}
+        <Form.Select name="owner" label="Maître" defaultValue={"2"} className="col-span-12">
+          <MenuItem value="1">Loïc Viret</MenuItem>
+          <MenuItem value="2">Paul Dupont</MenuItem>
         </Form.Select>
       </div>
 
