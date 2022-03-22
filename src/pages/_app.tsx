@@ -24,7 +24,9 @@ const App: NextComponentType<AppContext, AppInitialProps, AppLayoutProps> = ({
         <title>What the dog</title>
       </Head>
       <Header />
-      {getLayout(<Component {...pageProps}></Component>)}
+      <main className="w-full min-h-screen pt-8 dark:bg-[#17333D]">
+        {getLayout(<Component {...pageProps}></Component>)}
+      </main>
     </>
   );
 };

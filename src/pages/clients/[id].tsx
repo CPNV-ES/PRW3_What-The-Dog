@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import { Client } from "../../types/client";
-import { Dog, Gender } from "../../types/dog";
+import { Dog } from "../../modules/dog/Dog";
+import { Gender } from "../../modules/dog/Gender";
 import { Container, Fab } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import { Grid } from "@mui/material";
@@ -8,9 +9,10 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import { DogCard } from "../../ui/DogCard";
 import Edit from "@mui/icons-material/Edit";
-import { Link } from '../../ui/core/Link';
+import { Link } from "../../ui/core/Link";
+import { Sterilization } from "../../modules/dog/Sterilization";
 
-const client: Client = {
+const paul: Client = {
   id: 0,
   firstname: "Paul",
   lastname: "Dupont",
@@ -19,39 +21,11 @@ const client: Client = {
   phone: "+4177123000",
 };
 
-const Dogs = [
-  new Dog(
-    "1",
-    "Rufus",
-    Gender.Male,
-    new Date("2020-01-01"),
-    "Berger allemand",
-    client,
-  ),
-  new Dog(
-    "1",
-    "Rufus",
-    Gender.Male,
-    new Date("2020-01-01"),
-    "Berger allemand",
-    client,
-  ),
-  new Dog(
-    "1",
-    "Rufus",
-    Gender.Male,
-    new Date("2020-01-01"),
-    "Berger allemand",
-    client,
-  ),
-  new Dog(
-    "1",
-    "Rufus",
-    Gender.Male,
-    new Date("2020-01-01"),
-    "Berger allemand",
-    client,
-  ),
+const Dogs: Dog[] = [
+  { id: "1", name: "Rufus", gender: Gender.Male, birthdate: new Date("2020-01-01"), breedName: "Berger allemand", master: paul, sterilization: Sterilization.NotSterilized, color: "", isDead: false },
+  { id: "2", name: "Duke", gender: Gender.Male, birthdate: new Date("2020-05-01"), breedName: "Berger allemand", master: paul, sterilization: Sterilization.NotSterilized, color: "", isDead: false },
+  { id: "3", name: "Boss", gender: Gender.Male, birthdate: new Date("2019-01-01"), breedName: "Berger allemand", master: paul, sterilization: Sterilization.NotSterilized, color: "", isDead: false },
+  { id: "4", name: "Peppermint", gender: Gender.Female, birthdate: new Date("2021-01-01"), breedName: "Berger allemand", master: paul, sterilization: Sterilization.NotSterilized, color: "", isDead: false },
 ];
 
 const ClientView = () => {
@@ -70,7 +44,7 @@ const ClientView = () => {
                 fontSize: 30,
               }}
             >
-              {client.firstname} {client.lastname}
+              {paul.firstname} {paul.lastname}
             </Grid>
             <Grid item xs={1}>
               <Link href="/clients/123/edit">
@@ -84,13 +58,13 @@ const ClientView = () => {
               E-mail
             </Grid>
             <Grid item xs={9}>
-              {client.email}
+              {paul.email}
             </Grid>
             <Grid item xs={3} style={{ paddingLeft: 35 }}>
               Mobile
             </Grid>
             <Grid item xs={9}>
-              {client.phone}
+              {paul.phone}
             </Grid>
             <Grid item xs={12} style={{ fontSize: 20, fontWeight: "bold" }}>
               Chiens

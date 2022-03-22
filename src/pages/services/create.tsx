@@ -21,9 +21,9 @@ const Service: NextLayoutPage = () => {
 
 
   return (
-    <Form className="bg-cyan-700 text-white px-5 py-8 h-full" schema={ServiceSchema} onSubmit={handleSubmit}>
-      <h1 className='mb-5'>Création d'un service</h1>
-      <div className='grid grid-cols-12 space-y-3'>
+    <Form className="h-full px-5 py-8 text-white bg-cyan-700" schema={ServiceSchema} onSubmit={handleSubmit}>
+      <h1 className="mb-5">{"Création d'un service"}</h1>
+      <div className="grid grid-cols-12 space-y-3">
         <Form.DatePicker name="date" label="Date" className="col-span-12" />
         <Form.Select name="time" label="Durée" defaultValue={"1"} className="col-span-6 mr-3">
           <MenuItem value="1">15 min</MenuItem>
@@ -47,11 +47,11 @@ const Service: NextLayoutPage = () => {
       </div>
 
 
-      <button className="border border-white mt-5 w-full" type="submit">Ajouter</button>
+      <button className="w-full mt-5 border border-white" type="submit">Ajouter</button>
     </Form>
   )
 }
 
-Service.getLayout = (page) => <div className="bg-cyan-800 p-10">{page}</div>
+Service.getLayout = (page) => <div className="p-10 bg-cyan-800">{page}</div>
 
 export default Service
