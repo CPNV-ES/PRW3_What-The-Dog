@@ -52,13 +52,13 @@ const Dogs = [
   ),
 ];
 
-const ClientsIndex = () => {
+const ClientView = () => {
   return (
     <Container maxWidth="lg">
       <Card sx={{ maxWidth: 768, mx: "auto", marginY: 1 }}>
         <CardContent sx={{ paddingX: 2 }}>
           <Grid container spacing={2}>
-            <Grid item xs={12} style={{ display: 'flex', alignItems: 'center' }}>
+            <Grid item xs={12} style={{ display: 'flex' }}>
               {client.firstname} {client.lastname}
             </Grid>
             <Grid item xs={12}>
@@ -94,4 +94,4 @@ const ClientsIndex = () => {
   );
 };
 
-export default ClientsIndex;
+export default ClientView;

@@ -5,7 +5,14 @@ import { Client } from '../../types/client';
 import { Container, Fab } from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
 
-const paul = new Client("Paul", "Dupont", Gender.Male, "pdupont@cpnv.ch", "+4177123000");
+const paul: Client = {
+  id: 0,
+  firstname: "Paul",
+  lastname: "Dupont",
+  gender: "male",
+  email: "pdupont@cpnv.ch",
+  phone: "+4177123000",
+};
 
 const Dogs = [
   new Dog("1", "Rufus", Gender.Male, new Date("2020-01-01"), "Berger allemand", paul),
@@ -16,7 +23,7 @@ const Dogs = [
 
 const DogsIndex = () => {
   return <Container maxWidth="lg">
-    { Dogs.map(dog => <DogCard dog={dog}></DogCard>) }
+    { Dogs.map(dog => <DogCard key={dog.id} dog={dog}></DogCard>) }
 
     <Fab aria-label="add" style={{position:"absolute", right: 50, bottom: 50}}>
       <AddIcon />
