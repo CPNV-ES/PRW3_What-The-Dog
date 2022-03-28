@@ -91,7 +91,7 @@ export const DogCard = ({ dog } : DogProp) => {
         </Grid>
         <Grid container spacing={2} className="text-sm">
           <Grid item xs={3}>
-            <Link href={'/clients/123'}> 
+            <Link href={'/clients/' + dog.master.id}> 
               <span className="font-semibold">
                 { dog.master.lastname }
                 { ' ' } 
