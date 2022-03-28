@@ -37,7 +37,7 @@ export const ClientCard = ({ client } : ClientProp) => {
       <CardContent sx={{paddingX: 5}}>
         <Grid container spacing={2}>
           <Grid item xs={4}>
-            <Link href="/clients/123">
+            <Link href={'/clients/' + client.id}>
               <span style={{ fontWeight: 'bold', fontSize: '1.66em', position: 'relative', top: 5}}> 
                 {`${client.firstname } ${client.lastname }`}
                 { client.gender == 'Male' ? <MaleRoundedIcon style={{color: '#7BD7FF'}}/> : <FemaleRoundedIcon style={{color:'#FF7BAB'}}/> }
