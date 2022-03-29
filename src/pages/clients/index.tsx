@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { useState, useEffect } from "react";
 import { Container, Fab } from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
 import { ClientCard } from '../../modules/clients/ClientCard';
@@ -18,6 +19,7 @@ const clients = [
 ];
 
 const DogsIndex = () => {
+  Clients();
   return <Container maxWidth="lg">
     { clients.map(client => <ClientCard key={client.id} client={client}></ClientCard>) }  
 
@@ -27,4 +29,35 @@ const DogsIndex = () => {
   </Container>
 };
 
-export default DogsIndex;
+export default DogsIndex  ;
+
+function Clients() {
+  const [data, setData] = useState(null)
+  const [isLoading, setLoading] = useState(false)
+
+  useEffect(() => {
+    setLoading(true)
+    fetch('http://localhost:8000/clients', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'token': 'ITS_TIME_TO_MICKEY_DANCE'
+      }
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data)
+        setLoading(false)
+      })
+  }, [])
+
+  if (isLoading) return <p>Loading...</p>
+  if (!data) return <p>No profile data</p>
+
+  return (
+    <div>
+      <h1>{data.name}</h1>
+      <p>{data.bio}</p>
+    </div>
+  )
+}
