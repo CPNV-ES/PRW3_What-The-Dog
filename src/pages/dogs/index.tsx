@@ -6,6 +6,7 @@ import { Dog } from "../../modules/dog/Dog";
 import { DogCard } from "../../modules/dog/DogCard";
 import { Gender } from "../../modules/dog/Gender";
 import { Sterilization } from "../../modules/dog/Sterilization";
+import { fetcher } from "../../lib/fetcher";
 
 const paul = { id: "1", firstname: "Paul", lastname: "Dupoont", gender: "Male", email: "pdupont@cpnv.ch", phone: "+4177123000" };
 
