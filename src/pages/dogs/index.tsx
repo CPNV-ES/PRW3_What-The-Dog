@@ -6,6 +6,7 @@ import { Dog } from "../../modules/dog/Dog";
 import { DogCard } from "../../modules/dog/DogCard";
 import { Gender } from "../../modules/dog/Gender";
 import { Sterilization } from "../../modules/dog/Sterilization";
+import { fetcher } from "../../lib/fetcher";
 
 const paul = { id: "1", firstname: "Paul", lastname: "Dupoont", gender: "Male", email: "pdupont@cpnv.ch", phone: "+4177123000" };
 
@@ -19,7 +20,7 @@ const Dogs: Dog[] = [
 const DogsIndex = () => {
   return <Container maxWidth="lg">
     { Dogs.map(dog => <DogCard key={dog.id} dog={dog}></DogCard>) }
-    <Fab aria-label="add" className="fixed right-12 bottom-12">
+    <Fab aria-label="add" className="fixed right-12 bottom-12" href="/dogs/create">
       <AddIcon />
     </Fab>
   </Container>
